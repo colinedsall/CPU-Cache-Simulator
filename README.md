@@ -38,8 +38,15 @@ If you do not have homebrew or Python installed on your machine, you can downloa
 
 If you already have homebrew installed, you can install Python using the command
 ``` sh
-brew install python
+brew install python3
 ```
+
+If you are on a x64 host running Windows:
+``` cmd
+python3
+```
+
+This will bring you to the Microsoft Store page to download Python onto your machine. Verify that it is installed using the method below. You can also download Python and install it at https://www.python.org/downloads/windows/;
 
 Regardless of the method that you installed Python, check that it is installed with
 ``` sh
@@ -51,6 +58,11 @@ Validate that the version installed is at or above the requirement (Python 3.10+
 After verifying the install of Python, install the packages needed for simulation:
 
 ``` sh
+brew install numpy matplotlib
+```
+
+If you are on an x64 host running Windows:
+``` cmd
 pip install numpy matplotlib
 ```
 
@@ -60,34 +72,34 @@ Note that this project also use some standard includes, which should not have to
 
 1. Basic usage:
 ``` sh
-python cachesim.py
+python3 cachesim.py
 ```
 
 This runs the basic simulator with the default test file (`test.trace`) and outputs the results to `test.result`. The simulator will generate the output file if it does not already exist in the file directory. To run the analysis script, use the argument ``` --analyze ```.
 
 2. With custom trace and output files:
 ``` sh
-python cachesim.py --trace TRACE_NAME.trace --result OUTPUT_NAME.result
+python3 cachesim.py --trace TRACE_NAME.trace --result OUTPUT_NAME.result
 ```
 
 3. To generate block size and associativity test trace files:
 ``` sh
-python cachesim.py --generate
+python3 cachesim.py --generate
 ```
 
 4. To analyze and plot the results of the simulation:
 ``` sh
-python cachesim.py --analyze
+python3 cachesim.py --analyze
 ```
 
 5. To analyze for the miss rate (hit rate is default), use this flag in conjunction with ```--analyze```:
 ``` sh
-python cachesim.py --analyze --miss
+python3 cachesim.py --analyze --miss
 ```
 
 7. To run the full analysis script, which generates test files and runs the analysis of the simulation **for the report**:
 ``` sh
-python run_analysis.py
+python3 run_analysis.py
 ```
 
 Note that this function will create a separate analysis of the associativity trace. The original ```--analyze``` argument will NOT group the associativities in the case where the cache is fully-associative (i.e. there will be many associativities, not just four groups).
@@ -97,22 +109,22 @@ I recommend the following runs and arguments to see the entire functionality of 
 
 1. To run the basic trace files from the project specification (5 instructions), start with:
 ``` sh
-python cachesim.py
+python3 cachesim.py
 ```
 
 This will output the results of the test trace to ```test.trace```, as the default conditions for the simulator are ```--trace test.trace --result test.result```. As stated above, you can also specify the trace and result file names as needed.
 
 2. To generate the examples of block size in many different cases and associativity effects in several cases (showing that increasing associativity can make hit rate increase), run:
 ``` sh
-python cachesim.py --generate --trace block.trace --result block.result --analyze
-python cachesim.py --trace associative.trace --result associative.result --analyze
+python3 cachesim.py --generate --trace block.trace --result block.result --analyze
+python3 cachesim.py --trace associative.trace --result associative.result --analyze
 ```
 
 This will show the relationship between block size and associativity in these generated files that emphasize the effects of either block size or associativity. You can also use the argument ```--miss``` to show the impact on miss rate instead of the default hit rate.
 
 3. To get to the content we need for the report, or to make your life easier, just run the program:
 ``` sh
-python run_analysis.py
+python3 run_analysis.py
 ```
 
 This performs the same generation and simulation process, but outputs the results from the plots in the format that the project specification requests (a grouped output of associativities) file that you can view. **I recommend this program for graders or viewers who are not necessarily interested in the arguments or fundamental structure of this project**.
