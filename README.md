@@ -13,7 +13,7 @@ The simulator also generates some specialized trace files to specifically demons
 
 ## Source Files
 * `cachesim.py` - The main cache simulator
-* `generate_trace.py` - Pseudorandom script to generate `.trace` *files* to demonstrate block size and associativity effects on hit rate as per specification requirements
+* `generate_trace.py` - Script to generate `.trace` *files* to demonstrate block size and associativity effects on hit rate as per specification requirements
 * `run_analysis.py` - Analysis script to generate plots from the data created from the simulation for the report
 * `block.trace` - The trace file created by the generation script meant to show the effect of block size on hit rate
 * `associative.trace` - The trace file showing the effect of associativity on the hit rate (increases with associativity)
