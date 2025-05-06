@@ -29,7 +29,8 @@ Note that the trace files are pregenerated, but can be re-generated at any time 
 
 ## Instructions to Run
 ### Prerequisites/Environment
-* Python 3.10+ (this project was developed with Python 3.13.3 (via homebrew) on macOS 15.4.1 (arm64, Apple Silicon)
+* Python 3.10+ (this project was developed with Python 3.13.3 (via homebrew) on macOS 15.4.1 (arm64, Apple Silicon) using VSCode/Visual Studio Code.
+* NOTE: You can run this entirely inside of VSCode using a venv, as this project was developed that way.
 * Numpy https://numpy.org/devdocs/ (for data processing)
 * Matplotlib https://matplotlib.org/ (for plotting)
 
@@ -69,6 +70,15 @@ pip install numpy matplotlib
 Note that this project also use some standard includes, which should not have to be installed for the given Python version.
 
 ### Running the Simulator
+Use the basic Python interpreter to run this program. Though building this into a standalone executable would be "fun", I figured that it would be best to instruct the user to cd into the directory of this repo and run off the files there.
+
+To cd into the directory, simply open a terminal or command/powershell window and enter:
+``` sh
+cd "PATH_TO_YOUR_REPO_DIRECTORY"
+```
+
+Once in the repo, you can easily start running the simulation, as shown below:
+
 
 1. Basic usage:
 ``` sh
