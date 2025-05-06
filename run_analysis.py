@@ -101,8 +101,7 @@ def plot_block_size_effect(results, cache_sizes=[1024, 2048, 8192, 65536], place
     plt.grid(True)
     plt.legend()
     
-    file_prefix = "miss" if use_miss_rate else "hit"
-    filename = f"{file_prefix}_block_size_effect_multi.png"
+    filename = f"block_size_effect.png"
     plt.savefig(filename)
     plt.show()
     plt.close()
@@ -138,8 +137,7 @@ def plot_associativity_effect(results, cache_size=1024, block_size=8, write_poli
     plt.title(f"Effect of Associativity on {rate_label}\n(Cache Size: {cache_size} bytes, Block Size: {block_size} bytes, Write Policy: {write_policy})")
     plt.grid(True, axis='y')
     
-    file_prefix = "miss" if use_miss_rate else "hit"
-    filename = f"{file_prefix}_associativity_effect_grouped.png"
+    filename = f"associativity_effect_grouped.png"
     plt.savefig(filename)
     plt.show()
     plt.close()

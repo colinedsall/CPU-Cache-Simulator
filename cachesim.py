@@ -616,4 +616,3 @@ if __name__ == "__main__":
                                      block_size=4, 
                                      write_policy=Cache.WritePolicy.WB,
                                      miss=args.miss)
-        
