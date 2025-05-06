@@ -1,0 +1,5 @@
+load	0x00000010 
+store	0x00000018 
+load	0x00000020 
+store	0x00000028 
+store	0x00000050 
