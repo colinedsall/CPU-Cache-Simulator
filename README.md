@@ -92,17 +92,24 @@ This runs the basic simulator with the default test file (`test.trace`) and outp
 python3 cachesim.py --trace TRACE_NAME.trace --result OUTPUT_NAME.result
 ```
 
-3. To generate block size and associativity test trace files:
+3. If you would also like to configure the cache size, use that argument as follows:
+``` sh
+python 3 cachesim.py --size CACHE_SIZE_OF_ALLOWED
+```
+
+Note that the allowed cache sizes are 1024, 2048, 8192, and 65536. Other values given as an argument will force an exception.
+
+4. To generate block size and associativity test trace files:
 ``` sh
 python3 cachesim.py --generate
 ```
 
-4. To analyze and plot the results of the simulation:
+5. To analyze and plot the results of the simulation:
 ``` sh
 python3 cachesim.py --analyze
 ```
 
-5. To analyze for the miss rate (hit rate is default), use this flag in conjunction with ```--analyze```:
+6. To analyze for the miss rate (hit rate is default), use this flag in conjunction with ```--analyze```:
 ``` sh
 python3 cachesim.py --analyze --miss
 ```

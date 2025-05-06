@@ -106,32 +106,38 @@ Once in the repo, you can easily start running the simulation, as shown below:
 python3 cachesim.py
 ```
 
-This runs the basic simulator with the default test file (`test.trace`) and outputs the results to `test.result`. 
-The simulator will generate the output file if it does not already exist in the file directory. To run the 
-analysis script, use the argument ``` --analyze ```.
+This runs the basic simulator with the default test file (`test.trace`) and outputs the results to `test.result`.
+The simulator will generate the output file if it does not already exist in the file directory. To run the analysis
+script, use the argument ``` --analyze ```.
 
 2. With custom trace and output files:
 ``` sh
 python3 cachesim.py --trace TRACE_NAME.trace --result OUTPUT_NAME.result
 ```
 
-3. To generate block size and associativity test trace files:
+3. If you would also like to configure the cache size, use that argument as follows:
+``` sh
+python 3 cachesim.py --size CACHE_SIZE_OF_ALLOWED
+```
+
+Note that the allowed cache sizes are 1024, 2048, 8192, and 65536. Other values given as an argument will force an exception.
+
+4. To generate block size and associativity test trace files:
 ``` sh
 python3 cachesim.py --generate
 ```
 
-4. To analyze and plot the results of the simulation:
+5. To analyze and plot the results of the simulation:
 ``` sh
 python3 cachesim.py --analyze
 ```
 
-5. To analyze for the miss rate (hit rate is default), use this flag in conjunction with ```--analyze```:
+6. To analyze for the miss rate (hit rate is default), use this flag in conjunction with ```--analyze```:
 ``` sh
 python3 cachesim.py --analyze --miss
 ```
 
-7. To run the full analysis script, which generates test files and runs the analysis of the simulation 
-**for the report**:
+7. To run the full analysis script, which generates test files and runs the analysis of the simulation **for the report**:
 ``` sh
 python3 run_analysis.py
 ```
